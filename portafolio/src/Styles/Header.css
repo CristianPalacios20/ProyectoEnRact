@@ -1,0 +1,30 @@
+.header{
+    display: flex;
+    align-items: center;
+    /* color: white; */
+    background-color: #FFFFFF	;
+    padding: 10px 20px;
+    height: 60px;
+    position: sticky;
+    z-index: 10;
+    top: 0;
+}
+
+.nav-links{
+    display: flex;
+    gap: 50px;
+    /* border: 1px solid red; */
+    margin-left: auto;
+}
+
+.nav-link{
+    text-decoration: none;
+    color: #333;
+    padding: 5px;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.3s ease;
+}
+
+.nav-link:hover{
+    border-bottom: 2px solid #333;
+}
