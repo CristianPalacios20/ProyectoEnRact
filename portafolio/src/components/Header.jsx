@@ -1,16 +1,20 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import '../Styles/Header.css';
+import ScrollEffect from './effects/ScrollEffect';
 
 export default function Header() {
   return (
     <header className='header'>
       <h1>MI PORTAFOLIO</h1>
+      <ScrollEffect targetClass='header' />
       <nav className='nav-links'>
-        <Link className='nav-link' to={"/"}>SOBRE MÍ</Link>
-        <Link className='nav-link' to={"/projects"}>PROYECTOS</Link>
-        <Link className='nav-link'to={"/skills"}>HABILIDADES</Link>
-        <Link className='nav-link'to={"/contact"}>CONTACTO</Link>
+        <ul>
+          <li className='nav-link'><a href="#home">INICIO</a></li>
+          <li className='nav-link'><a href="#about">SOBRE MÍ</a></li>
+          <li className='nav-link'><a href="#skills">HABILIDADES</a></li>
+          <li className='nav-link'><a href="#projects">PROYECTOS</a></li>
+          <li className='nav-link'><a href="#contact">CONTACTO</a></li>
+        </ul>
       </nav>
     </header>
   )

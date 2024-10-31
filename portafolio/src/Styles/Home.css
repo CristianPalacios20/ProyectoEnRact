@@ -1,0 +1,53 @@
+#home{
+    display: flex;
+    flex-direction: row;
+}
+
+.content-descrip{
+    background-color: white;
+    width: 50%;
+    height: 100vh;
+    padding: 40px;
+}
+
+.content-descrip h1{
+    margin-bottom: 10px;
+}
+
+.content-info{
+    margin-top: 50px;
+}
+
+.content-info h1{
+    font-size: 40px;
+}
+
+.content-img{
+    background-color: #e5e7e9;
+    width: 50%;
+    height: 100vh;
+}
+
+.conten-buttons{
+    display: flex;
+    gap: 4px;
+    margin-top: 20px;
+}
+.conten-buttons button{
+    padding: 10px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.btn-contratame{
+    width: 110px;
+    background-color: black;
+    color: #e5e7e9;
+    border: none;
+}
+
+.explorarMas{
+    width: 180px;
+    background-color: none;
+    font-weight: 700;
+}

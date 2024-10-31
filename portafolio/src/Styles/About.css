@@ -1,0 +1,63 @@
+#about{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content-sobreMi{
+    text-align: center;
+}
+
+.content-sobreMi h2{
+    font-weight: 200;
+}
+
+.content-1{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 100px;
+}
+
+.content-1 > *{
+    margin-bottom: 10px;
+    gap: 20px;
+}
+
+.content-span{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.line{
+    display: block;
+    border-bottom: 2px solid #333;
+}
+
+.large{
+    width: 60px;
+}
+
+.small{
+    width: 30px;
+}
+
+.content-texto{
+    display: flex;
+    align-items: center;
+    width: 50%;
+    height: 100px;
+    margin: 40px 0px;
+}
+
+.content-button button{
+    width: 150px;
+    padding: 10px;
+    font-weight: 700;
+    border: none;
+    color: #fff;
+    background-color: black;
+}

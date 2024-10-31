@@ -7,7 +7,7 @@ export default function Projects() {
     { id: 2, name: "Proyecto 2", description: "Descripción del proyecto 2", link: "#" },
   ];
   return (
-    <section className="projects">
+    <section className="projects" id='projects'>
       <h2>Proyectos</h2>
       <ul>
         {projectList.map((project) => (
@@ -18,60 +18,7 @@ export default function Projects() {
           </li>
         ))}
       </ul>
-      <ul>
-        {projectList.map((project) => (
-          <li key={project.id}>
-            <h3>{project.name}</h3>
-            <p>{project.description}</p>
-            <a href={project.link} target="_blank" rel="noopener noreferrer">Ver proyecto</a>
-          </li>
-        ))}
-      </ul>
-      <ul>
-        {projectList.map((project) => (
-          <li key={project.id}>
-            <h3>{project.name}</h3>
-            <p>{project.description}</p>
-            <a href={project.link} target="_blank" rel="noopener noreferrer">Ver proyecto</a>
-          </li>
-        ))}
-      </ul>
-      <ul>
-        {projectList.map((project) => (
-          <li key={project.id}>
-            <h3>{project.name}</h3>
-            <p>{project.description}</p>
-            <a href={project.link} target="_blank" rel="noopener noreferrer">Ver proyecto</a>
-          </li>
-        ))}
-      </ul>
-      <ul>
-        {projectList.map((project) => (
-          <li key={project.id}>
-            <h3>{project.name}</h3>
-            <p>{project.description}</p>
-            <a href={project.link} target="_blank" rel="noopener noreferrer">Ver proyecto</a>
-          </li>
-        ))}
-      </ul>
-      <ul>
-        {projectList.map((project) => (
-          <li key={project.id}>
-            <h3>{project.name}</h3>
-            <p>{project.description}</p>
-            <a href={project.link} target="_blank" rel="noopener noreferrer">Ver proyecto</a>
-          </li>
-        ))}
-      </ul>
-      <ul>
-        {projectList.map((project) => (
-          <li key={project.id}>
-            <h3>{project.name}</h3>
-            <p>{project.description}</p>
-            <a href={project.link} target="_blank" rel="noopener noreferrer">Ver proyecto</a>
-          </li>
-        ))}
-      </ul>
+
     </section>
   )
 }
