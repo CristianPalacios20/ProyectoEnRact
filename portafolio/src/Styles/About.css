@@ -59,5 +59,6 @@
     font-weight: 700;
     border: none;
     color: #fff;
+    cursor: pointer;
     background-color: black;
 }

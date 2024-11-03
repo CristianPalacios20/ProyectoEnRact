@@ -1,54 +1,21 @@
-import React from 'react'
+import React from 'react';
+import '../Styles/Contact.css';
 
 export default function Contact() {
   return (
-    <section id='contact'>
-      <h2>Contáctame</h2>
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores atque voluptates, quae cumque dolores ratione doloremque neque fuga et ipsam.</p>
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores atque voluptates, quae cumque dolores ratione doloremque neque fuga et ipsam.</p>
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores atque voluptates, quae cumque dolores ratione doloremque neque fuga et ipsam.</p>
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores atque voluptates, quae cumque dolores ratione doloremque neque fuga et ipsam.</p>
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores atque voluptates, quae cumque dolores ratione doloremque neque fuga et ipsam.</p>
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores atque voluptates, quae cumque dolores ratione doloremque neque fuga et ipsam.</p>
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores atque voluptates, quae cumque dolores ratione doloremque neque fuga et ipsam.</p>
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores atque voluptates, quae cumque dolores ratione doloremque neque fuga et ipsam.</p>
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores atque voluptates, quae cumque dolores ratione doloremque neque fuga et ipsam.</p>
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores atque voluptates, quae cumque dolores ratione doloremque neque fuga et ipsam.</p>
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores atque voluptates, quae cumque dolores ratione doloremque neque fuga et ipsam.</p><p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores atque voluptates, quae cumque dolores ratione doloremque neque fuga et ipsam.</p>
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores atque voluptates, quae cumque dolores ratione doloremque neque fuga et ipsam.</p>
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores atque voluptates, quae cumque dolores ratione doloremque neque fuga et ipsam.</p>
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores atque voluptates, quae cumque dolores ratione doloremque neque fuga et ipsam.</p>
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores atque voluptates, quae cumque dolores ratione doloremque neque fuga et ipsam.</p>
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores atque voluptates, quae cumque dolores ratione doloremque neque fuga et ipsam.</p>
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores atque voluptates, quae cumque dolores ratione doloremque neque fuga et ipsam.</p>
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores atque voluptates, quae cumque dolores ratione doloremque neque fuga et ipsam.</p>
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores atque voluptates, quae cumque dolores ratione doloremque neque fuga et ipsam.</p>
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores atque voluptates, quae cumque dolores ratione doloremque neque fuga et ipsam.</p>
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores atque voluptates, quae cumque dolores ratione doloremque neque fuga et ipsam.</p>
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores atque voluptates, quae cumque dolores ratione doloremque neque fuga et ipsam.</p>
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores atque voluptates, quae cumque dolores ratione doloremque neque fuga et ipsam.</p>
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores atque voluptates, quae cumque dolores ratione doloremque neque fuga et ipsam.</p>
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores atque voluptates, quae cumque dolores ratione doloremque neque fuga et ipsam.</p>
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores atque voluptates, quae cumque dolores ratione doloremque neque fuga et ipsam.</p>
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores atque voluptates, quae cumque dolores ratione doloremque neque fuga et ipsam.</p>
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores atque voluptates, quae cumque dolores ratione doloremque neque fuga et ipsam.</p>
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores atque voluptates, quae cumque dolores ratione doloremque neque fuga et ipsam.</p>
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores atque voluptates, quae cumque dolores ratione doloremque neque fuga et ipsam.</p>
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores atque voluptates, quae cumque dolores ratione doloremque neque fuga et ipsam.</p>
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores atque voluptates, quae cumque dolores ratione doloremque neque fuga et ipsam.</p>
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores atque voluptates, quae cumque dolores ratione doloremque neque fuga et ipsam.</p>
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores atque voluptates, quae cumque dolores ratione doloremque neque fuga et ipsam.</p>
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores atque voluptates, quae cumque dolores ratione doloremque neque fuga et ipsam.</p>
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores atque voluptates, quae cumque dolores ratione doloremque neque fuga et ipsam.</p><p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores atque voluptates, quae cumque dolores ratione doloremque neque fuga et ipsam.</p>
+    <section id='section-contact'>
+      <div className='content-about'>
+        <div className='content-sobreMi'>
+            <h2>CONTACTAME</h2>
+          </div>
+        <div className='content-span'>
+            <span className='line large'></span>
+            <span className='line small'></span>
+        </div>
+      </div>
+      <div>
 
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores atque voluptates, quae cumque dolores ratione doloremque neque fuga et ipsam.</p><p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores atque voluptates, quae cumque dolores ratione doloremque neque fuga et ipsam.</p>
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores atque voluptates, quae cumque dolores ratione doloremque neque fuga et ipsam.</p>
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores atque voluptates, quae cumque dolores ratione doloremque neque fuga et ipsam.</p>
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores atque voluptates, quae cumque dolores ratione doloremque neque fuga et ipsam.</p>
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores atque voluptates, quae cumque dolores ratione doloremque neque fuga et ipsam.</p>
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores atque voluptates, quae cumque dolores ratione doloremque neque fuga et ipsam.</p>
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores atque voluptates, quae cumque dolores ratione doloremque neque fuga et ipsam.</p>
-      
+      </div>
     </section>
   )
 }

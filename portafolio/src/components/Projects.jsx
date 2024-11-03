@@ -1,24 +1,22 @@
-import React from 'react'
+import React from 'react';
+import '../Styles/Projects.css';
 
 export default function Projects() {
 
-  const projectList = [
-    { id: 1, name: "Proyecto 1", description: "Descripción del proyecto 1", link: "#" },
-    { id: 2, name: "Proyecto 2", description: "Descripción del proyecto 2", link: "#" },
-  ];
   return (
-    <section className="projects" id='projects'>
-      <h2>Proyectos</h2>
-      <ul>
-        {projectList.map((project) => (
-          <li key={project.id}>
-            <h3>{project.name}</h3>
-            <p>{project.description}</p>
-            <a href={project.link} target="_blank" rel="noopener noreferrer">Ver proyecto</a>
-          </li>
-        ))}
-      </ul>
+    <section id='section-projects'>
+      <div className='content-about'>
+        <div className='content-sobreMi'>
+            <h2>PROJECTS</h2>
+          </div>
+        <div className='content-span'>
+            <span className='line large'></span>
+            <span className='line small'></span>
+        </div>
+      </div>
+      <div>
 
+      </div>
     </section>
   )
 }
