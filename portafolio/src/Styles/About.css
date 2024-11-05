@@ -61,4 +61,10 @@
     color: #fff;
     cursor: pointer;
     background-color: black;
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.content-button button:hover{
+    transform: scale(1.1);
+    box-shadow: -2px 5px 5px rgba(0,0,0,0.5);
 }

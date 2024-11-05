@@ -6,7 +6,7 @@ export default function About() {
     <section id='about'>
       <div className='content-1'>
         <div className='content-sobreMi'>
-          <h2>ABOUT</h2>
+          <h2>ACERCA DE MÍ</h2>
         </div>
         <div className='content-span'>
           <span className='line large'></span>

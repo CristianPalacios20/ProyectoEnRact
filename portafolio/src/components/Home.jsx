@@ -10,8 +10,8 @@ export default function Home() {
                 <p>Desarrollador web Junior</p>
             </div>
             <div className='conten-buttons'>
-                <button className='btn-contratame'>HERE ME</button>
-                <button className='explorarMas'>EXPLORE MORE</button>
+                <button className='btn-contratame'>SOBRE MÍ</button>
+                <button className='explorarMas'>EXPLORAR MÁS</button>
             </div>
         </div>
         <div className='content-img'>

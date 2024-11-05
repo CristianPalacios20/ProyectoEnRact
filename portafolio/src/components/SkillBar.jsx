@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import '../Styles/SkillsBar.css';
 
-export default function SkillBar({skillName, percentage}) {
+export default function SkillBar({skillName, percentage, isVisible}) {
     const [width, setWidth] = useState(0);
 
     useEffect(() =>{
-        setTimeout(() =>{
-          setWidth(percentage);
-        }, 100);
-    }, [percentage]);
+      if(isVisible){
+        setWidth(percentage);
+      }else{
+        setWidth(0);
+      }
+    }, [isVisible, percentage]);
 
   return (
     <div className='skills'>
