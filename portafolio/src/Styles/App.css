@@ -5,6 +5,10 @@
     font-family: Arial, sans-serif;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 body{
     background-color: white;
     overflow: hidden;
@@ -20,7 +24,6 @@ body{
 
 main > *{
     margin-bottom: 40px;
-    /* border: 1px solid red; */
 }
 
 section{

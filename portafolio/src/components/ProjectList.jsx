@@ -1,5 +1,4 @@
 import project1Img from '../assets/image1.jpg';
-import imgVer from '../assets/ver.png';
 
 const ProjectList = [
     {

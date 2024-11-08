@@ -13,7 +13,7 @@ export default function Skills() {
           setIsVisible(entry.isIntersecting)
         },
         {
-          threshold: 1,
+          threshold: 0.2,
         }
       );
       if(sectionRef.current){

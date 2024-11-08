@@ -23,9 +23,20 @@
 }
 
 .content-img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: #e5e7e9;
     width: 50%;
     height: 100vh;
+}
+
+.content-img img{
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    /* margin-left: 80px; */
+    filter: contrast(1) brightness(1.2) saturate(1);
 }
 
 .conten-buttons{

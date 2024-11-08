@@ -1,4 +1,5 @@
 import React from 'react';
+import imgPresent from '../assets/ImgPresentation.png'
 import '../Styles/Home.css';
 
 export default function Home() {
@@ -15,7 +16,7 @@ export default function Home() {
             </div>
         </div>
         <div className='content-img'>
-            <img src="" alt="" />
+            <img src={ imgPresent } alt="" />
         </div>
     </section>
   )

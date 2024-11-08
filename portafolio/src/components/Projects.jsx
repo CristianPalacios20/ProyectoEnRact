@@ -1,7 +1,7 @@
 import React from 'react';
 import ProjectList from './ProjectList';
 import '../Styles/Projects.css';
-import imgVer from '../assets/ver2.png';
+import imgVer from '../assets/ver.png';
 
 export default function Projects() {
   return (
