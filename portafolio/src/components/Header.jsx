@@ -1,6 +1,6 @@
 import React from 'react';
 import '../Styles/Header.css';
-import ScrollEffect from './effects/ScrollEffect';
+import ScrollEffect from '../Hooks/ScrollEffect';
 
 export default function Header() {
   return (
