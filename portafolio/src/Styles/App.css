@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
+    text-decoration: none;
 }
 
 html{
@@ -28,6 +29,7 @@ main > *{
 
 section{
     min-height: 300px;
+    border: 1px solid red;
 }
 
 .main-content{
@@ -37,6 +39,5 @@ section{
 footer{
     background-color: black;
     color: white;
-    height: 200px;
-    padding: 20px;
+    height: 40vh;
 }

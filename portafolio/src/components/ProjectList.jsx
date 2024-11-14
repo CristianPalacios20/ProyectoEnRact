@@ -25,30 +25,7 @@ const ProjectList = [
         image: project1Img,
         link: '#'
     },
-    {
-        title: 'Project 5',
-        description: 'Description of Project 5',
-        image: project1Img,
-        link: '#'
-    },
-    {
-        title: 'Project 6',
-        description: 'Description of Project 6',
-        image: project1Img,
-        link: '#'
-    },
-    {
-        title: 'Project 7',
-        description: 'Description of Project 7',
-        image: project1Img,
-        link: '#'
-    },
-    {
-        title: 'Project 8',
-        description: 'Description of Project 8',
-        image: project1Img,
-        link: '#'
-    },
+
 ];
 
 export default ProjectList; 

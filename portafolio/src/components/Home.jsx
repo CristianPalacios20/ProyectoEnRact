@@ -1,5 +1,5 @@
 import React from 'react';
-import imgPresent from '../assets/ImgPresentation.png'
+import imgPresent from '../assets/imagel.png'
 import '../Styles/Home.css';
 
 export default function Home() {
