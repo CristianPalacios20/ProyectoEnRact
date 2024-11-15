@@ -14,11 +14,18 @@ export default function Projects() {
   return (
     <section id='section-projects'>
       <div className='content-about'>
-        <div className='content-sobreMi'>
+        <div className='content-projects'>
             <h2>PROYECTOS</h2>
             <div className='content-span'>
               <span className='line large'></span>
               <span className='line small'></span>
+            </div>
+            <div className='content-menu-projects'>
+              <ul>
+                <li className='todo'>TODO</li>
+                <li className='desarrollo'>DESARROLLO</li>
+                <li className='desarrollo'>DISEÑO</li>
+              </ul>
             </div>
         </div>
       </div>

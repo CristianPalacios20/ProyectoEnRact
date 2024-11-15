@@ -94,7 +94,7 @@ form .wrapper-btn{
     border-bottom: 1px solid black;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 900px) {
     #section-contact{
         padding: 10px ;
     }

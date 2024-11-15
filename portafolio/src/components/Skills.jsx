@@ -40,10 +40,10 @@ export default function Skills() {
       </div>
       <div className='content-skills'>
         < SkillBar skillName="HTMML/CSS" percentage={80} isVisible={isVisible}/>
-        < SkillBar skillName="JAVASCRIPS" percentage={40} isVisible={isVisible}/>
+        < SkillBar skillName="JAVASCRIPS" percentage={30} isVisible={isVisible}/>
         < SkillBar skillName="PHP" percentage={20} isVisible={isVisible}/>
-        < SkillBar skillName="REACT" percentage={60} isVisible={isVisible}/>
-        < SkillBar skillName="JAVA" percentage={30} isVisible={isVisible}/>
+        < SkillBar skillName="REACT" percentage={30} isVisible={isVisible}/>
+        < SkillBar skillName="JAVA" percentage={20} isVisible={isVisible}/>
         < SkillBar skillName="MYSQL" percentage={40} isVisible={isVisible}/>
       </div>
     </section>

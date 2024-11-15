@@ -29,7 +29,7 @@ main > *{
 
 section{
     min-height: 300px;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 .main-content{
