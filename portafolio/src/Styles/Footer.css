@@ -66,3 +66,11 @@ footer h2{
 .footer p, .footer a {
     font-size: 0.9em;
 }
+
+
+@media (max-width: 900px) {
+    .footer p, a{
+        color: #b3b6b7;
+        font-size: 15px;
+    }
+}

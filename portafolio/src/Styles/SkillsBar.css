@@ -35,3 +35,11 @@
   padding-right: 10px;
   color: black; /* Asegúrate de que el texto sea visible */
 }
+
+
+@media (max-width: 900px) {
+    .progress-bar{
+      height: 18px;
+        /* background-color: red;      */
+    }
+}

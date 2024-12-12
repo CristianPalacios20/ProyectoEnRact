@@ -2,6 +2,9 @@ import React from 'react';
 import ScrollEffect from '../Hooks/ScrollEffect';
 import useToggleMenu from '../Hooks/useToggleMenu';
 import menuicon from '../assets/menu2.png';
+import iconCerrar from  '../assets/cerrar.png';
+import home from '../assets/home.png';
+import usuario from '../assets/usuario.png';
 import '../Styles/Header.css';
 
 export default function Header() {
@@ -28,21 +31,28 @@ export default function Header() {
           <h1>MPFW CSPP</h1>
           <img src={menuicon} onClick={toggleMenu} />
         </div>
-        {
-          isMenuOpen && (
-            <div className={ `div-links ${isMenuOpen ? 'div-links-active' : ''}` }>
-            <nav className='nav-links-movil'>
-              <ul>
-                <li className='nav-link-movil'><a href="#home">INICIO</a></li>
-                <li className='nav-link-movil'><a href="#about">SOBRE MÍ</a></li>
-                <li className='nav-link-movil'><a href="#section-skills">HABILIDADES</a></li>
-                <li className='nav-link-movil'><a href="#section-projects">PROYECTOS</a></li>
-                <li className='nav-link-movil'><a href="#section-contact">CONTÁCTAME</a></li>
-              </ul>
-            </nav>
+        {/* { */}
+          {/* isMenuOpen && ( */}
+          <div 
+            className={ `div-links ${isMenuOpen ? 'div-links-active' : ''}` }
+          >
+            <div className='div-iconCerrar'>
+              <img src={ iconCerrar } onClick={toggleMenu} />
             </div>
-        )}
+            <div className='nn'>
+                <nav className='nav-links-movil'>
+                  <ul>
+                    <li className='nav-link-movil'><a href="#home">INICIO</a></li>
+                    <li className='nav-link-movil'><a href="#about">SOBRE MÍ</a></li>
+                    <li className='nav-link-movil'><a href="#section-skills">HABILIDADES</a></li>
+                    <li className='nav-link-movil'><a href="#section-projects">PROYECTOS</a></li>
+                    <li className='nav-link-movil'><a href="#section-contact">CONTÁCTAME</a></li>
+                  </ul>
+                </nav>
+            </div>
+          </div>
+        {/* // )} */}
       </header>
     </>
-  )
+  );
 }
