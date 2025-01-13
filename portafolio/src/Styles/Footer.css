@@ -2,12 +2,36 @@
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto;
+    grid-template-areas: 
+    "contact-info" "social-links"
+    "copyright";
+
+    overflow: hidden;
+}
+
+.contact-info,
+.social-links,
+.copyright{
+    margin: 20px;
+    /* border: 1px solid red; */
+}
+
+.footer h2{
+    margin-bottom: 10px;
+}
+
+
+@media (max-width: 440px) {
+
+.footer{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
     grid-template-areas:
         "contact-info"
         "social-links"
         "copyright";
     padding: 20px;
-    background-color: black;
     color: #f1f1f1;
     text-decoration: none;
 }
@@ -35,28 +59,28 @@
     margin: 0 5px;
     text-decoration: none;
     transition: color 0.3s ease;
-    color: #f1f1f1;
-}
-
-.social-links a:hover{
     color: #ffdd57;
 }
+
+/* .social-links a:hover{
+    color: #ffdd57;
+} */
 
 .copyright{
     grid-area: copyright;
     text-align: center;
     font-size: 0.9em;
-    
     color: #b3b6b7;
 }
 
 .copyright a{
-    transition: color 0.3s ease;
-}
-
-.copyright a:hover{
+    /* transition: color 0.3s ease; */
     color: #ffdd57;
 }
+
+/* .copyright a:hover{
+    color: #ffdd57;
+} */
 
 footer h2{
     font-size: 1.2rem;
@@ -66,9 +90,6 @@ footer h2{
 .footer p, .footer a {
     font-size: 0.9em;
 }
-
-
-@media (max-width: 900px) {
     .footer p, a{
         color: #b3b6b7;
         font-size: 15px;

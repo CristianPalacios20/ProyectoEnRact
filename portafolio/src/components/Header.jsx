@@ -3,8 +3,6 @@ import ScrollEffect from '../Hooks/ScrollEffect';
 import useToggleMenu from '../Hooks/useToggleMenu';
 import menuicon from '../assets/menu2.png';
 import iconCerrar from  '../assets/cerrar.png';
-import home from '../assets/home.png';
-import usuario from '../assets/usuario.png';
 import '../Styles/Header.css';
 
 export default function Header() {

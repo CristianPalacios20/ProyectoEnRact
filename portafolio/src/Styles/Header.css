@@ -17,8 +17,6 @@
 
 .nav-links{
     margin-left: auto;
-    /* border: 1px solid red; */
-    
     margin-right: 40px;
 }
 
@@ -38,27 +36,33 @@
 }
 
 .nav-link a{
+    position: relative;
     font-size: 15px;
     font-weight: 500;
     color: black;
     font-family: inspire-bold, sans-serif;
-    border-bottom: 2px solid transparent;
-    transition: border-bottom 0.3s ease;
 }
 
-/* .nav-link img{
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
-} */
+.nav-link a::after{
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    right: 0;
+    width: 0;
+    height: 3px;
+    background-color: #333;
+    transition: width 0.4s ease;
+}
 
-.nav-link a:hover{
-    border-bottom: 2px solid #333;
+.nav-link a:hover::after{
+    width: 100%;
+    left: 0;
+    right: auto;
 }
 
 .scrolled{
     position: sticky;
-    height: 60px;
+    height: 55px;
     background-color: white;
     transition: background-color 0.8s ease, height 0.8s ease;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);

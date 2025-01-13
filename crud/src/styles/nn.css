@@ -1,0 +1,52 @@
+/* Contenedores */
+.contenedores {
+  margin-top: 20px;
+  position: relative; /* Para manejar posiciones absolutas */
+  height: 150px; /* Ajusta el alto para que no haya cambios bruscos */
+  overflow: hidden;
+}
+
+/* Estilo base de los contenedores */
+.contenedor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+  font-size: 18px;
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Transición */
+  opacity: 0; /* Comienza oculto */
+  transform: scale(0.95); /* Pequeño zoom-out cuando está oculto */
+}
+
+/* Contenedor visible */
+.contenedor.visible {
+  opacity: 1;
+  transform: scale(1); /* Escala normal cuando está visible */
+  z-index: 1; /* Siempre en el frente */
+}
+
+/* Contenedor oculto */
+.contenedor.oculto {
+  opacity: 0;
+  transform: scale(0.95); /* Zoom-out */
+  z-index: 0; /* En el fondo */
+  pointer-events: none; /* Deshabilita interacción */
+}
+
+/* Colores específicos para los contenedores */
+.contenedor-1 {
+  background-color: #4caf50;
+}
+
+.contenedor-2 {
+  background-color: #f44336;
+}
+

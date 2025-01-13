@@ -7,7 +7,6 @@ export default function Projects() {
   const [activeProject, setActiveProject] = useState(null);
 
   const toggleInfo = (index) =>{
-    // setActiveProject(prevIndex => (prevIndex === index ? null : index));
     setActiveProject(activeProject === index ? null : index);
   }
 
