@@ -1,12 +1,22 @@
-// import React from 'react'
+import React, { useState } from 'react'
+import useLogin from '../hooks/useLogin';
 import facebook from '../assets/facebook.png';
 import gmail from '../assets/gmail.png';
 import flIzquierda from '../assets/flecha-izquierda.png';
 import flDerecha from '../assets/flecha-derecha.png';
 import "../styles/Login.css";
-import { useState } from 'react';
 
 export default function form() {
+  const { 
+    nombre, 
+    setNombre,
+    password,
+    setPassword,
+    handleLogin,
+    loading,
+    error,
+  } = useLogin();
+
   const newLocal = <label className="recordarme"><input type="checkbox" name="" id="checkbox" />Recuérdame</label>;
   const [mostrar, setMostrar] = useState(true);
   return (
@@ -27,22 +37,31 @@ export default function form() {
           </div>
           <div className="form-box">
             <h2>Inicia sesión aquí</h2>
-            <form className="login-form" onSubmit={(e) => e.preventDefault()}>
-                <input type="text" 
+            <form className="login-form" onSubmit={handleLogin}>
+                <input 
+                    type="text" 
                     placeholder="Enter your email"
                     className="input-field"
+                    value={nombre}
+                    onChange={(e) => setNombre(e.target.value)}
                 />
                 <input 
                   type="password" 
                   placeholder="Enter your password"
                   className="input-field"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                 />
                 <div className="outh-options">
                   {newLocal /* Checkbox para recordar usuario */}
                   <p>¿Olvidaste tu contraseña?</p>
                 </div>
                 <div className="button-container">
-                  <button type="submit" className="secondary-button">Iniciar sesión</button>
+                  <button 
+                    type="submit" 
+                    className="secondary-button"
+                    disabled={loading}
+                  >{ loading ? 'Iniciar sesión' : 'Cargando...' }</button>
                 </div>
                 <div className='social-buttons-container'>
                     <span>O usa tu cuenta</span>
@@ -52,6 +71,8 @@ export default function form() {
                     </div>
                 </div>
               </form>
+
+              {error && <p className="error-message">{error}</p>}
           </div>
         </div>
       )}
