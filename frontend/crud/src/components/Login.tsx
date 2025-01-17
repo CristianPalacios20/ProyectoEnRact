@@ -1,21 +1,34 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import useLogin from '../hooks/useLogin';
+import useAuthRegistro from '../hooks/useAuthRegistro';
 import facebook from '../assets/facebook.png';
 import gmail from '../assets/gmail.png';
 import flIzquierda from '../assets/flecha-izquierda.png';
 import flDerecha from '../assets/flecha-derecha.png';
 import "../styles/Login.css";
 
-export default function form() {
+export default function Form() {
   const { 
     nombre, 
     setNombre,
-    password,
-    setPassword,
+    contrasena,
+    setContrasena,
     handleLogin,
     loading,
     error,
   } = useLogin();
+
+  const {
+    registroNombre,
+    setRegistroNombre,
+    registroContrasena,
+    setRegistroContrasena,
+    registroCorreo,
+    setRegistroCorreo,
+    registroMensaje,
+    handleRegistro,
+    registroLoading,
+  } = useAuthRegistro();
 
   const newLocal = <label className="recordarme"><input type="checkbox" name="" id="checkbox" />Recuérdame</label>;
   const [mostrar, setMostrar] = useState(true);
@@ -42,6 +55,7 @@ export default function form() {
                     type="text" 
                     placeholder="Enter your email"
                     className="input-field"
+                    required
                     value={nombre}
                     onChange={(e) => setNombre(e.target.value)}
                 />
@@ -49,8 +63,9 @@ export default function form() {
                   type="password" 
                   placeholder="Enter your password"
                   className="input-field"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                  value={contrasena}
+                  onChange={(e) => setContrasena(e.target.value)}
                 />
                 <div className="outh-options">
                   {newLocal /* Checkbox para recordar usuario */}
@@ -61,7 +76,9 @@ export default function form() {
                     type="submit" 
                     className="secondary-button"
                     disabled={loading}
-                  >{ loading ? 'Iniciar sesión' : 'Cargando...' }</button>
+                  >
+                    { loading ? 'Iniciando sesión...' : 'Iniciar sesión' }
+                  </button>
                 </div>
                 <div className='social-buttons-container'>
                     <span>O usa tu cuenta</span>
@@ -81,22 +98,39 @@ export default function form() {
           {/* Sección para registrarse */}
           <div className="form-box">
             <h2>Regístrate aquí</h2>
-              <form className="register-form" onSubmit={(e) => e.preventDefault()}>
-                  <input type="text" 
+              <form className="register-form" onSubmit={ handleRegistro }>
+                  <input 
+                      type="text" 
                       placeholder="Enter your name"
                       className="input-field"
+                      required
+                      value={ registroNombre }
+                      onChange={ (e) => setRegistroNombre(e.target.value) }
                   />
-                  <input type="email" 
+                  <input 
+                      type="email" 
                       placeholder="Enter your email"
                       className="input-field"
+                      required
+                      value={ registroCorreo }
+                      onChange={ (e) => setRegistroCorreo(e.target.value) }
                   />
                   <input 
                     type="password" 
                     placeholder="Enter your password"
                     className="input-field"
+                    required
+                    value={ registroContrasena }
+                    onChange={ (e) => setRegistroContrasena(e.target.value) }
                   />
                   <div className="button-container">
-                    <button type="submit" className="secondary-button">Registrarse</button>
+                    <button 
+                      type="submit" 
+                      className="secondary-button"
+                      disabled={ registroLoading }
+                    >
+                      { registroLoading ? "Registrando..." : "Registrar" }
+                    </button>
                   </div>
                   <div className='social-buttons-container'>
                     <span>O usa tu cuenta</span>
@@ -105,6 +139,7 @@ export default function form() {
                       <button className="social-button"><img src={facebook} alt='Facebook'></img></button>
                     </div>
                   </div>
+                  { registroMensaje && <p className="success-message">{ registroMensaje }</p>}
               </form>
           </div>
           <div className="welcome-message">

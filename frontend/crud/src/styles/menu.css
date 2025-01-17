@@ -1,0 +1,121 @@
+*{
+    list-style: none;
+    text-decoration: none;
+    
+}
+
+.menu{
+    display: grid;
+    grid-template-areas: 
+        "content-logo"
+        "content-user"
+        "content-menu"
+        "content-logout"
+        /* "footer" */
+    ;
+    grid-template-columns: 1fr;
+    grid-template-rows: 40px 250px auto 80px;
+    font-size: 10px;
+    color: #ffff;
+}
+
+.content-logo{
+    grid-area: content-logo;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content-logo h2{
+    font-size: 20px;
+}
+
+.content-user{
+    grid-area: content-user;
+    display: inline-grid;
+    align-items: center;
+    justify-content: center;
+}
+
+.content-user div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+.content-user div span{
+    font-size: 18px;
+}
+
+.content-menu{
+    grid-area: content-menu;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content-menu ul{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.content-menu ul li{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.content-menu ul img{
+    width: 24px;
+    height: 24px;
+}
+
+.content-menu ul li a{
+    font-size: 14px;
+    color: #ffff;
+}
+
+.content-logout{
+    grid-area: content-logout;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    font-size: 14px;
+    border-top: 1px solid #ffff;
+}
+
+.content-logout ul li{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.content-logout img{
+    width: 24px;
+    height: 24px;
+}
+
+.content-logout button{
+    background-color: transparent;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    color: #ffff;
+    text-decoration: underline;
+}
+
+.content-loading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: #ffff;
+    color: #000;
+    font-size: 20px;
+}

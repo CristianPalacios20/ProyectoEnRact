@@ -18,14 +18,16 @@ if ($conn->connect_error) {
 
 $data = json_decode(file_get_contents("php://input"), true);
 $nombre = $data['nombre'];
-$password = $data['password'];
+$contrasena = $data['contrasena'];
 
-$query = 'SELECT * FROM usuarios WHERE nombre = '$nombre' AND password = '$password'';
-$resultado = $conn->query($query);
+$stmt = $conn->prepare("SELECT * FROM usuarios WHERE nombre = ? AND contrasena = ?");
+$stmt->bind_param("ss", $nombre, $contrasena);
+$stmt->execute();
+$resultado = $stmt->get_result();
 
 if ($resultado->num_rows > 0) {
     $username = $resultado->fetch_assoc();
-    echo json_encode([
+    echo json_encode([ 
         'success' => true,
         'message' => 'Inicio de sesión correcto',
         'username' => $username
@@ -33,9 +35,10 @@ if ($resultado->num_rows > 0) {
 }else{
     echo json_encode([
         'success' => false,
-        'message' => 'Inicio de sesión incorrecto'
+        'message' => '¡Usuario y/o contraseña incorrectos!'
     ]);
 }
 
+$stmt->close();
 $conn->close();
 ?>
