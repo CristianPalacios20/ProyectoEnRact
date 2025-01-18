@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import Cookies from 'js-cookie';
 import { useNavigate} from 'react-router-dom';
 import '../../../styles/menu.css';
+import image from '../../../assets/image2.png'
 import iconUser from '../../../assets/icons/iconUser1.svg';
 import iconDashboard from '../../../assets/icons/iconDashboard.svg';
 import iconProductos from '../../../assets/icons/iconProducts.svg';
@@ -39,16 +40,18 @@ export default function Menu() {
   return (
     <>
       { isAuthenticated ? (
-              <div className='menu'>
+            <div className='menu'>
               <div className='content-logo'>
-                <h2>PR CSPP</h2>
-              </div>
-              <div className='content-user'>
                 <div>
-                  <img src={ iconUser } alt="" />
-                  <span>USERNAME</span>
+                  <img src={ image } alt="" />
                 </div>
               </div>
+              {/* <div className='content-user'>
+                <div>
+                  <img src={ image } alt="" />
+                  <span>CRISTIAN M.</span>
+                </div>
+              </div> */}
               <div className='content-menu'>
                 <ul>
                   <li>
@@ -72,7 +75,7 @@ export default function Menu() {
               <div className='content-logout'>
                 <ul>
                   <li>
-                    <img src= { iconLogout } alt="" />
+                    <img src= { iconLogout } onClick={ handleLogout } />
                     <button onClick={ handleLogout }>Cerrar sesión</button>
                   </li>
                 </ul>

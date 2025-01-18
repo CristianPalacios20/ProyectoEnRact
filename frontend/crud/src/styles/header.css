@@ -7,13 +7,26 @@
     align-items: center;
     justify-content: end;
     padding: 5px;
+    /* border-bottom: 2px solid #ccc; */
+}
+
+.contetTitle{
+    display: flex;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    padding: 5px;
+}
+
+.contetTitle h2{
+    margin-left: 20px;
+    font-size: 20px;
 }
 
 .content-nav{
     display: flex;
     width: 80%;
     height: 100%;
-    /* border: 1px solid blue; */
 }
 
 .content-nav ul{
@@ -56,4 +69,35 @@
     margin-left: -35px;
     cursor: pointer;
     object-fit: contain;
+}
+
+.contentNofi img{
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.header .content-user span{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 30px;
+    background-color: #cacfd2;
+    border-radius: 30px;
+}
+
+.header .content-user span img{
+    width: 60px;
+    height: auto;
+    object-fit: cover;
+    margin-left: 5px;
+}
+
+.header .content-user span p{
+    font-size: 12px;
+}
+
+.header .content-user span .iconFlechaAbajo{
+    margin-right: 20px;
+    cursor: pointer;
 }

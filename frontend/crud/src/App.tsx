@@ -6,6 +6,7 @@ import {
 import Form from './components/Login';
 import Dashboard from './components/dashboard/dashboard';
 import "./styles/App.css";
+// import Nn from './components/nn';
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
           <Route path="/dashboard" element={ <Dashboard/> }/>
         </Routes>
       </Router>
+      // <Nn  />
   )
 }
 
