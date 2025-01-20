@@ -3,22 +3,23 @@ import {
   Routes,
   Route
 } from 'react-router-dom';
+import { UserProvider } from './hooks/useContext'
 import Form from './components/Login';
 import Dashboard from './components/dashboard/dashboard';
 import "./styles/App.css";
-// import Nn from './components/nn';
 
 function App() {
 
   return (
+    <UserProvider>
       <Router>
         <Routes>
           <Route path="/" element={<Form/>} />
-          <Route path="/dashboard" element={ <Dashboard/> }/>
+          <Route path="/dashboard/*" element={ <Dashboard/> }/>
         </Routes>
       </Router>
-      // <Nn  />
+    </UserProvider>
   )
 }
 
-export default App
+export default App;

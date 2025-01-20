@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import Cookies from 'js-cookie';
-import { useNavigate} from 'react-router-dom';
+import { useNavigate, Link} from 'react-router-dom';
 import '../../../styles/menu.css';
 import image from '../../../assets/image2.png'
 import iconUser from '../../../assets/icons/iconUser1.svg';
@@ -31,10 +31,9 @@ export default function Menu() {
     localStorage.removeItem('authToken');
     Cookies.remove('userSession');
     setIsAuthenticated(false); // Actualiza el estado para reflejar que no está autenticado
-
     //redirigir a la página de inicio y borra el historial
     navigate('/', { replace : true }); // Redirige al login después de cerrar sesión
-    window.location.reload();
+    // window.location.reload();
   };
 
   return (
@@ -46,29 +45,23 @@ export default function Menu() {
                   <img src={ image } alt="" />
                 </div>
               </div>
-              {/* <div className='content-user'>
-                <div>
-                  <img src={ image } alt="" />
-                  <span>CRISTIAN M.</span>
-                </div>
-              </div> */}
               <div className='content-menu'>
                 <ul>
                   <li>
-                    <img src= { iconDashboard } alt="" />
-                    <a href="">Dashboard</a>
+                      <img src= { iconDashboard } alt="" />
+                      <Link to='/dashboard'>Dashboard</Link>
                   </li>
                   <li>
                     <img src= { iconUser } alt="" />
-                    <a href="">Usuarios</a>
+                    <Link to='/dashboard/usuarios'>Usuarios</Link>
                   </li>
                   <li>
                     <img src= { iconProductos } alt="" />
-                    <a href="">Productos</a>
+                    <Link to='/dashboard/productos'>Productos</Link>
                   </li>
                   <li>
                     <img src= { iconSetting } alt="" />
-                    <a href="">Configuración </a>
+                    <Link to='/dashboard/configuracion'>Configuración</Link>
                   </li>
                 </ul>
               </div>

@@ -5,6 +5,8 @@ header("Content-Type: application/json; charset=UTF-8");
 header("Access-Control-Allow-Methods: POST, GET, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
+session_start();
+
 $servername = "localhost";
 $username = "root";
 $password = "2008";
@@ -17,6 +19,15 @@ if ($conn->connect_error) {
 }
 
 $data = json_decode(file_get_contents("php://input"), true);
+
+if (!isset($data['nombre']) || !isset($data['contrasena'])) {
+    echo json_encode([
+        'success' => false,
+        'message' => 'Faltan datos en la solicitud.'
+    ]);
+    exit();
+}
+
 $nombre = $data['nombre'];
 $contrasena = $data['contrasena'];
 
@@ -26,11 +37,13 @@ $stmt->execute();
 $resultado = $stmt->get_result();
 
 if ($resultado->num_rows > 0) {
-    $username = $resultado->fetch_assoc();
+    $usuario = $resultado->fetch_assoc();
+    $_SESSION['nombre'] = $usuario['nombre'];
+
     echo json_encode([ 
         'success' => true,
         'message' => 'Inicio de sesión correcto',
-        'username' => $username
+        'usuario' => $usuario
     ]);
 }else{
     echo json_encode([

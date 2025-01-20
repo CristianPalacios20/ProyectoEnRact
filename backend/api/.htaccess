@@ -1,0 +1,5 @@
+# Permitir acceso a la carpeta 'api'
+<Directory "C:\wamp64\www\ProyectoEnRact\backend\api">
+    AllowOverride All
+    Require all granted
+</Directory>

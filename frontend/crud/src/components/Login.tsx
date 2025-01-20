@@ -7,7 +7,7 @@ import flIzquierda from '../assets/flecha-izquierda.png';
 import flDerecha from '../assets/flecha-derecha.png';
 import "../styles/Login.css";
 
-export default function Form() {
+const Form = () => {
   const { 
     nombre, 
     setNombre,
@@ -157,3 +157,5 @@ export default function Form() {
     </div>
   )
 }
+
+export default Form;

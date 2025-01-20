@@ -1,10 +1,18 @@
+import { useUser } from '../../../hooks/useContext';
 import iconSereach from '../../../assets/icons/Sereach.svg';
 import iconUser from '../../../assets/image2.png';
 import iconFlechaAbajo from '../../../assets/icons/FlechaAbajo.svg';
 import iconNoti from '../../../assets/icons/iconNoti.svg';
 import '../../../styles/header.css';
 
-export default function header() {
+const Header : React.FC = () => {
+  const { user, cargando } = useUser();
+  if(cargando){
+    return <p>Cargando usuario</p>
+  }
+
+  console.log('Usuario desde el contexto:', user);
+
   return (
     <>
       <header className='header'>
@@ -23,7 +31,7 @@ export default function header() {
             <li className='content-user'>
                 <span>
                   <img src={ iconUser } alt="" />
-                  <p>USERNAME</p>
+                  <p>{ user ? user : 'USERNAME' }</p>
                   <img className='iconFlechaAbajo' src= { iconFlechaAbajo } alt="" />
                 </span>
             </li>
@@ -36,3 +44,5 @@ export default function header() {
     </>
   )
 }
+
+export default Header;

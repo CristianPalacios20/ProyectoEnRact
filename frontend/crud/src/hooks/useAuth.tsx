@@ -25,7 +25,7 @@ function useAuth() {
             // console.log(response.data);  // Esto te permitirá ver la respuesta completa de la API
 
             if(response.data.success){
-                setUser(response.data.username); // almacena los datos del usaurio si el inicio de sesión fue exitoso
+                setUser(response.data.User); // almacena los datos del usaurio si el inicio de sesión fue exitoso
                 return { success : true, user : response.data.user };
             }else{
                 setError(response.data.message); // muestra el mensaje de error si las credenciales son incorrectas

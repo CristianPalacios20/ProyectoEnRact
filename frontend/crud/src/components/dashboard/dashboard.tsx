@@ -4,13 +4,13 @@ import Menu from './components/menu';
 import Main from './components/main';
 import '../../styles/dashboard.css';
 
-export default function dashboard() {
+export default function Dashboard() {
   return (
     <>
       <div className='dashboard'>
-        <Header/>
-        <Menu/>
-        <Main/>
+          <Header/>
+          <Menu/>
+          <Main/>
       </div>
     </>
   )
