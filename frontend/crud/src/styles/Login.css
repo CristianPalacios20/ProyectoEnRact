@@ -33,6 +33,10 @@
     pointer-events: none;
 }
 
+.form-section-register{
+    height: 500px;
+}
+
 .welcome-message{
     width: 50%;
     height: 100%;
@@ -131,6 +135,12 @@
     border-bottom: 1px solid #333;
 }
 
+.browsers{
+    border: none;
+    outline: none;
+    /* border-bottom: 1px solid #333; */
+}
+
 .outh-options{
     display: flex;
     justify-content: space-between;
@@ -219,7 +229,7 @@
 
 .success-message{
     position: absolute;
-    bottom: 25px;
+    bottom: 20px;
     color: blue;
 }
 

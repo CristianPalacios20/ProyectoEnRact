@@ -3,8 +3,10 @@ import axios from 'axios';
 
 interface User{
     id : number;
-    nombre : string;
+    correo : string;
     contrasena : string;
+    nombres : string;
+    apellidos : string;
 }
 
 function useAuth() {
@@ -12,38 +14,50 @@ function useAuth() {
     const [loading, setLoading] = useState <boolean> (false); // Estado para manejar la carga de la solicitud
     const [error, setError] = useState <string | null> (null); // Estado para manejar errores
 
-    const Auth = async (nombre: string, contrasena: string) : Promise <{ success : boolean; user ? : User; message ? : string }> => {
+    const Auth = async (correo: string, contrasena: string) : Promise <{ success : boolean; user ? : User; message ? : string }> => {
         setLoading(true); // comienza la carga
         setError(null); // limpia errores
 
         try{
-            const response = await axios.post('http://localhost/ProyectoEnRact/backend/api/datos.php', {
-                nombre,
+
+            const response = await axios.post(
+                'http://localhost/ProyectoEnRact/backend/api/login.php', 
+            {
+                correo,
                 contrasena
+            }, {
+                headers: {
+                    'Content-Type': 'application/json',
+                }
             });
 
-            // console.log(response.data);  // Esto te permitirá ver la respuesta completa de la API
-
             if(response.data.success){
-                setUser(response.data.User); // almacena los datos del usaurio si el inicio de sesión fue exitoso
-                return { success : true, user : response.data.user };
+                setUser(response.data.usuario); // almacena los datos del usaurio si el inicio de sesión fue exitoso
+                // console.log('Usuario almacenado en setUser:', response.data.usuario);
+                return { success : true, user : response.data.usuario };
             }else{
                 setError(response.data.message); // muestra el mensaje de error si las credenciales son incorrectas
                 setTimeout(() =>{
                     setError(''); // limpia el error después de 3 segundos
-                }, 3000)
+                }, 5000)
                 return { success : false, message : response.data.message };
             }
 
-        }catch(err){
-            setError('Error en la solicitud'); // En caso de que haya un error en al conexión o cualquier otro error
+        }catch(err : any){
+            if(err.response){
+                setError(err.response.data.message || 'Error en la respuesta del servidor');
+            }else if(err.request){
+                setError('No se pudo conectar al servidor');
+            }else{
+                setError(err.message || 'Error desconocido');
+            }
             return { success : false, message : 'Error en la solicitud' };
         }finally{
             setLoading(false); // finaliza la carga
         }
     };
 
-  return { user, Auth, loading, error };
+  return { user, setUser, Auth, loading, error };
 }
 
 export default useAuth;

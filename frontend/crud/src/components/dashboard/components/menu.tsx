@@ -3,11 +3,11 @@ import Cookies from 'js-cookie';
 import { useNavigate, Link} from 'react-router-dom';
 import '../../../styles/menu.css';
 import image from '../../../assets/image2.png'
-import iconUser from '../../../assets/icons/iconUser1.svg';
-import iconDashboard from '../../../assets/icons/iconDashboard.svg';
+import iconDashboard from '../../../assets/icons/MageDashboard4.svg';
+import iconUser from '../../../assets/icons/SolarUsersGroupTwoRoundedBoldDuotone.svg';
 import iconProductos from '../../../assets/icons/iconProducts.svg';
-import iconSetting from '../../../assets/icons/iconSetting.svg';
-import iconLogout from '../../../assets/icons/iconLogout.svg';
+import iconSetting from '../../../assets/icons/FluentSettingsCogMultiple24Regular.svg';
+import iconLogout from '../../../assets/icons/StashSignoutAltLight.svg';
 
 export default function Menu() {
   const navigate = useNavigate();
@@ -61,7 +61,7 @@ export default function Menu() {
                   </li>
                   <li>
                     <img src= { iconSetting } alt="" />
-                    <Link to='/dashboard/configuracion'>Configuración</Link>
+                    <Link to='/dashboard/configuracion'>Ajustes</Link>
                   </li>
                 </ul>
               </div>

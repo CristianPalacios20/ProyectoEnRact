@@ -1,19 +1,22 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import useAuth from './useAuth';
+import { useAuthContext } from './useContext';
 
 function useLogin() {
     const navigate = useNavigate();
-    const { Auth: login, loading, error } = useAuth(); // desestructuramos useAuth
-    const [nombre, setNombre] = useState('');
+    const { Auth: login, loading, error } = useAuth(); //funcion para iniciar sessión
+    const { setUser } = useAuthContext(); // desestructuramos useAuth
+    const [correo, setCorreo] = useState('');
     const [ contrasena, setContrasena ] = useState('');
 
     const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        // console.log('Formulario enviado');  
 
-        const result =  await login(nombre, contrasena);
-        if(result.success){
+        const result =  await login(correo, contrasena);
+        if(result.success && result.user){
+            setUser(result.user);
+            console.log('Inicio de sesión exitoso.');
             // Redireccionar a la página principal
             navigate('/dashboard');
         }else{
@@ -23,8 +26,8 @@ function useLogin() {
     };
 
     return {
-        nombre, 
-        setNombre,
+        correo, 
+        setCorreo,
         contrasena,
         setContrasena,
         handleLogin,

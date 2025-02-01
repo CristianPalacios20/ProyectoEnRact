@@ -9,8 +9,8 @@ import "../styles/Login.css";
 
 const Form = () => {
   const { 
-    nombre, 
-    setNombre,
+    correo, 
+    setCorreo,
     contrasena,
     setContrasena,
     handleLogin,
@@ -19,16 +19,22 @@ const Form = () => {
   } = useLogin();
 
   const {
-    registroNombre,
-    setRegistroNombre,
-    registroContrasena,
-    setRegistroContrasena,
+    registroNombres,
+    setRegistroNombres,
+    registroApellidos,
+    setRegistroApellidos,
     registroCorreo,
     setRegistroCorreo,
+    registroContrasena,
+    setRegistroContrasena,
+    rolId,
+    setRolId,
     registroMensaje,
     handleRegistro,
     registroLoading,
   } = useAuthRegistro();
+
+  // console.log('datos obtenidos de registros: ', registroNombres, registroApellidos, registroContrasena, registroCorreo);
 
   const newLocal = <label className="recordarme"><input type="checkbox" name="" id="checkbox" />Recuérdame</label>;
   const [mostrar, setMostrar] = useState(true);
@@ -52,12 +58,12 @@ const Form = () => {
             <h2>Inicia sesión aquí</h2>
             <form className="login-form" onSubmit={handleLogin}>
                 <input 
-                    type="text" 
+                    type="email" 
                     placeholder="Enter your email"
                     className="input-field"
                     required
-                    value={nombre}
-                    onChange={(e) => setNombre(e.target.value)}
+                    value={correo}
+                    onChange={(e) => setCorreo(e.target.value)}
                 />
                 <input 
                   type="password" 
@@ -94,7 +100,7 @@ const Form = () => {
         </div>
       )}
       {!mostrar && (
-        <div className={ `form-section ${ !mostrar ? 'active' : 'inactive' } ` }>
+        <div className={ `form-section ${ !mostrar ? 'active' : 'inactive' } form-section-register` }>
           {/* Sección para registrarse */}
           <div className="form-box">
             <h2>Regístrate aquí</h2>
@@ -104,8 +110,16 @@ const Form = () => {
                       placeholder="Enter your name"
                       className="input-field"
                       required
-                      value={ registroNombre }
-                      onChange={ (e) => setRegistroNombre(e.target.value) }
+                      value={ registroNombres }
+                      onChange={ (e) => setRegistroNombres(e.target.value) }
+                  />
+                  <input 
+                      type="text" 
+                      placeholder="Enter your last name"
+                      className="input-field"
+                      required
+                      value={ registroApellidos }
+                      onChange={ (e) => setRegistroApellidos(e.target.value) }
                   />
                   <input 
                       type="email" 
@@ -123,6 +137,18 @@ const Form = () => {
                     value={ registroContrasena }
                     onChange={ (e) => setRegistroContrasena(e.target.value) }
                   />
+                  <select 
+                    className='browsers' 
+                    name="rol_id" 
+                    id="rol_id"
+                    required
+                    value={rolId}
+                    onChange={ (e) => setRolId(e.target.value) }
+                  >
+                    <option value="">Select your role</option>
+                    <option value="1">Admin</option>
+                    <option value="2">User</option>
+                  </select>
                   <div className="button-container">
                     <button 
                       type="submit" 

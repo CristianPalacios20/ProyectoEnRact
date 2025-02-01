@@ -3,28 +3,30 @@
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: POST, GET, OPTIONS");
 header("Content-Type: application/json; charset=UTF-8");
-header("Access-Control-Allow-Methods: POST");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
-$servername = "localhost";
-$username = "root";
-$password = "2008";
-$dbname = "prueba";
 
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-    die(json_encode([
-        'success' => false,
-        'message' => 'Conexión fallida: ' . $conn->connect_error
-    ]));
-}
+include_once 'conexion.php';
 
 //obtener los datos del cuerpo de la solicitud
-$data = json_decode(file_get_contents("php://input"), true);
-$registroNombre = $data['nombre'];
+$data = json_decode( file_get_contents("php://input"), true);
+// var_dump($data);
+// exit;
+
+if(!$data){
+    echo json_encode([
+        'success' => false,
+        'message' => 'Datos no recibidos correctamente',
+        'raw_input' => file_get_contents("php://input"), 
+    ]);
+    exit;
+}
+
+$registroNombres = $data['nombres'];
+$registroApellidos = $data['apellidos'];
 $registroCorreo = $data['correo'];
 $registroContrasena = $data['contrasena'];
+$registroRolId = $data['rol_id'];
 
 //encriptar la contraseña
 $hashedPassword = password_hash($registroContrasena, PASSWORD_DEFAULT);
@@ -32,7 +34,6 @@ $hashedPassword = password_hash($registroContrasena, PASSWORD_DEFAULT);
 $stmCheck = $conn->prepare("SELECT * FROM usuarios WHERE correo = ?");
 $stmCheck -> bind_param("s", $registroCorreo);
 $stmCheck -> execute();
-
 $resultCheck = $stmCheck->get_result();
 
 if($resultCheck->num_rows > 0){
@@ -43,8 +44,15 @@ if($resultCheck->num_rows > 0){
     exit;
 }
 
-$stmt = $conn->prepare("INSERT INTO usuarios (nombre, correo, contrasena) VALUES (?, ?, ?)");
-$stmt -> bind_param("sss", $registroNombre, $registroCorreo, $hashedPassword);
+$stmt = $conn->prepare("INSERT INTO usuarios (nombres, apellidos, correo, contrasena, rol_id) VALUES (?, ?, ?, ?, ?)");
+$stmt -> bind_param(
+    "ssssi", 
+    $registroNombres, 
+    $registroApellidos, 
+    $registroCorreo, 
+    $hashedPassword, 
+    $registroRolId
+);
 
 if($stmt->execute()){
     echo json_encode([

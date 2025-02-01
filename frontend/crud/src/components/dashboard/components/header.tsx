@@ -1,17 +1,11 @@
-import { useUser } from '../../../hooks/useContext';
+import { useAuthContext }  from '../../../hooks/useContext';
 import iconSereach from '../../../assets/icons/Sereach.svg';
 import iconUser from '../../../assets/image2.png';
-import iconFlechaAbajo from '../../../assets/icons/FlechaAbajo.svg';
 import iconNoti from '../../../assets/icons/iconNoti.svg';
 import '../../../styles/header.css';
 
 const Header : React.FC = () => {
-  const { user, cargando } = useUser();
-  if(cargando){
-    return <p>Cargando usuario</p>
-  }
-
-  console.log('Usuario desde el contexto:', user);
+  const { user, formatearNombreCompleto } = useAuthContext();
 
   return (
     <>
@@ -29,14 +23,14 @@ const Header : React.FC = () => {
               <img src={iconNoti} alt="" />
             </li>
             <li className='content-user'>
-                <span>
-                  <img src={ iconUser } alt="" />
-                  <p>{ user ? user : 'USERNAME' }</p>
-                  <img className='iconFlechaAbajo' src= { iconFlechaAbajo } alt="" />
-                </span>
-            </li>
-            <li>
-
+              <div className='user-info'>
+                <img src={ iconUser } alt="" />
+                <p>{ user?.nombres ? formatearNombreCompleto(user.nombres) : 'USERNAME' }</p>
+                {/* <img className='iconFlechaAbajo' src= { iconFlechaAbajo } alt="" /> */}
+              </div>
+              <ul className="ul-hijo">
+                <li>Perfil</li>
+              </ul>
             </li>
           </ul>
         </nav>
