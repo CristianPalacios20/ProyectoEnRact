@@ -1,9 +1,14 @@
 <?php
 // api/conexion.php
-$servername = getenv('DB_HOST');  // Dirección IP o nombre de host de la base de datos
-$username = getenv('DB_USERNAME');  // Usuario de la base de datos
-$password = getenv('DB_PASS');  // Contraseña del usuario de la base de datos
-$dbname = getenv('DB_NAME');  // Nombre de la base de datos
+// $servername = getenv('DB_HOST'); 
+// $username = getenv('DB_USERNAME'); 
+// $password = getenv('DB_PASS'); 
+// $dbname = getenv('DB_NAME'); 
+
+$servername = '34.55.220.177';
+$username =  'root';
+$password = '2008'; 
+$dbname = 'portafolio_csp';
 
 // Conexión a la base de datos
 $conn = new mysqli($servername, $username, $password, $dbname);
