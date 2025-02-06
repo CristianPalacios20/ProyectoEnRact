@@ -38,7 +38,7 @@ function useAuth() {
             }else{
                 setError(response.data.message); // muestra el mensaje de error si las credenciales son incorrectas
                 setTimeout(() =>{
-                    setError(''); // limpia el error después de 3 segundos
+                    setError(''); // limpia el error después de 5 segundos
                 }, 5000)
                 return { success : false, message : response.data.message };
             }
