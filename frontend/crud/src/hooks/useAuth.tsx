@@ -21,7 +21,7 @@ function useAuth() {
         try{
 
             const response = await axios.post(
-                'http://localhost/ProyectoEnRact/backend/api/login.php', 
+                'http://localhost/ProyectoEnRact/backend/api/login.php',
             {
                 correo,
                 contrasena

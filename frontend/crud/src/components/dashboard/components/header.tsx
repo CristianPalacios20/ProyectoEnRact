@@ -26,7 +26,6 @@ const Header : React.FC = () => {
               <div className='user-info'>
                 <img src={ iconUser } alt="" />
                 <p>{ user?.nombres ? formatearNombreCompleto(user.nombres) : 'USERNAME' }</p>
-                {/* <img className='iconFlechaAbajo' src= { iconFlechaAbajo } alt="" /> */}
               </div>
               <ul className="ul-hijo">
                 <li>Perfil</li>
