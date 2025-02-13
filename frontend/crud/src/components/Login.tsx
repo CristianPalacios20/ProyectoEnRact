@@ -34,8 +34,6 @@ const Form = () => {
     registroLoading,
   } = useAuthRegistro();
 
-  // console.log('datos obtenidos de registros: ', registroNombres, registroApellidos, registroContrasena, registroCorreo);
-
   const newLocal = <label className="recordarme"><input type="checkbox" name="" id="checkbox" />Recuérdame</label>;
   const [mostrar, setMostrar] = useState(true);
   return (
@@ -94,7 +92,6 @@ const Form = () => {
                     </div>
                 </div>
               </form>
-
               {error && <p className="error-message">{error}</p>}
           </div>
         </div>

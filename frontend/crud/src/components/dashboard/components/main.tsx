@@ -1,9 +1,10 @@
 import { Routes, Route } from 'react-router-dom';
-import DashboardPage from '../subComponents/dashboardPage';
-import UsuariosPage from '../subComponents/usuarios';
-import ProductosPage from '../subComponents/productos';
-import ConfiguracionPage from '../subComponents/configuracion';
+import DashboardPage from '../pages/dashboardPage';
+import UsuariosPage from '../pages/usuarios';
+import ProductosPage from '../pages/productos';
+import ConfiguracionPage from '../pages/configuracion';
 import '../../../styles/main.css'
+
 export default function main() {
   return (
       <div className='main'>
