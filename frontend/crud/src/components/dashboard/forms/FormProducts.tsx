@@ -1,5 +1,5 @@
 import  useArrastar  from '../../../hooks/useArrastrar';
-import Arrastrar from '../../arrastrar';
+// import Arrastrar from '../../arrastrar';
 import '../../../styles/FormProducts.css';
 import iconCerrar from '../../../assets/icons/iconCerrar.svg';
 import { useState } from 'react';
@@ -9,7 +9,7 @@ interface FormularioProps {
 }
 
 export default function FormProducts({ cerrarFormulario }: FormularioProps) {
-  const { posicion, iniciarArrastre, moverVentana, detenerArrastre } = useArrastar();
+  const { posicion, iniciarArrastre, moverVentana } = useArrastar();
   const [arrastrando, setArrastrando] = useState(false);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {

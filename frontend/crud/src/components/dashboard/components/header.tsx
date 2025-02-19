@@ -11,7 +11,7 @@ const Header : React.FC = () => {
     <>
       <header className='header'>
         <div className='contetTitle'>
-          <h2>Dashboard MPFW_CSPP.</h2>
+          <h2>MPFW_CSPP.</h2>
         </div>
         <nav className='content-nav'>
           <ul>

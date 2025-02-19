@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react"
+import { FaBox, FaCheck, FaTimes, FaThumbsUp, FaThumbsDown } from "react-icons/fa";
 import '../../../styles/productos.css'
 import editar from '../../../assets/icons/editar.svg';
 import eliminar from '../../../assets/icons/iconEliminar.svg'
 import FormProducts from "../forms/FormProducts";
+import Graficos from "./grafico";
 
 interface Productos{
   id: number;
@@ -79,28 +81,44 @@ export default function Productos() {
   // Renderizar los productos aquí...
   return (
     <div className="productos-container">
+      
+      <div className="title-container">
+      <h3>Productos</h3>
+      <span></span>
+      <p>Indicadores y métricas</p>
+      </div>
       <div className="indicators-container">
-        <h2>Indicadores y métricas</h2>
-        <div className="indicators">
-          <div>
-            <h3>TP</h3>
-            <p>{metricas.TP}</p>
+        <div className="indicadores">
+          <div className="indicator total-productos">
+            <div>
+              {/* <h3><FaBox style={{ color : "blue" }}/>TP</h3> */}
+              <span className="descripcion">
+                Total de productos: {metricas.TP}
+              </span>
+            </div>
+            <div className="grafico">
+              <Graficos metricas = {metricas}/>
+            </div>
           </div>
-          <div>
-            <h3>PA</h3>
+          <div className="indicator productos-activos">
+            <h3><FaCheck style={{ color : "green" }}/>PA</h3>
             <p>{metricas.PA}</p>
+            <span className="descripcion">Productos Activos</span>
           </div>
-          <div>
-            <h3>PI</h3>
+          <div className="indicator productos-inactivos">
+            <h3><FaTimes style={{ color : "red" }}/>PI</h3>
             <p>{metricas.PI}</p>
+            <span className="descripcion">Productos inactivos</span>
           </div>
-          <div>
-            <h3>PMV+</h3>
+          <div className="indicator productos-mas-vendidos">
+            <h3><FaThumbsUp style={{ color : "blue"}}/>PMV+</h3>
             <p>{metricas.PMV_positivo}</p>
+            <span className="descripcion">Productos disponibles</span>
           </div>
-          <div>
-            <h3>PMV-</h3>
+          <div className="indicator productos-menos-vendidos">
+            <h3><FaThumbsDown style={{ color : "red" }}/>PMV-</h3>
             <p>{metricas.PMV_negativo}</p>
+            <span className="descripcion">Productos disponibles</span>
           </div>
         </div>
       </div>
@@ -118,15 +136,15 @@ export default function Productos() {
           <thead>
             <tr>
               <th>ID</th>
-              <th>PRODUCTO</th>
-              <th>CATEGORÍA</th>
-              <th>MARCA</th>
-              <th>PRECIO</th>
-              <th>CANTIDAD</th>
-              <th>ESTADO</th>
-              <th>IMAGEN</th>
-              <th>FECHA DE CREACIÓN</th>
-              <th>ACCIONES</th>
+              <th>Producto</th>
+              <th>Ccategoria</th>
+              <th>Marca</th>
+              <th>Precio</th>
+              <th>Cantidad</th>
+              <th>Estado</th>
+              <th>Imagen</th>
+              <th>Fecha de creación</th>
+              <th>Acciones</th>
             </tr>
           </thead>
           <tbody>
